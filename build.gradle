@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.5'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.saga_poc'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:3.1.2'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j:2.1.2'
+
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	runtimeOnly 'com.h2database:h2:2.1.212'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+	testImplementation 'com.github.tomakehurst:wiremock-jre8-standalone:2.33.2'
+}
